@@ -261,19 +261,20 @@ export default function TopologyGraph({
               >
                 {/* SVG Definitions */}
                 <defs>
-                  <linearGradient id="edge-core-bridge" x1="0%" y1="0%" x2="0%" y2="100%">
+                  {/* Canvas coordinates keep horizontal and vertical edge gradients visible. */}
+                  <linearGradient id="edge-core-bridge" gradientUnits="userSpaceOnUse" x1="0" y1="43" x2="0" y2="282">
                     <stop offset="0%" stopColor={isDark ? '#38bdf8' : '#0284c7'} stopOpacity="0.8" />
                     <stop offset="100%" stopColor={isDark ? '#818cf8' : '#4f46e5'} stopOpacity="0.8" />
                   </linearGradient>
-                  <linearGradient id="edge-bridge-neo" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient id="edge-bridge-neo" gradientUnits="userSpaceOnUse" x1="0" y1="307" x2="0" y2="425">
                     <stop offset="0%" stopColor={isDark ? '#818cf8' : '#4f46e5'} stopOpacity="0.8" />
                     <stop offset="100%" stopColor={isDark ? '#2dd4bf' : '#0d9488'} stopOpacity="0.8" />
                   </linearGradient>
-                  <linearGradient id="edge-bridge-upcoming" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient id="edge-bridge-upcoming" gradientUnits="userSpaceOnUse" x1="0" y1="307" x2="0" y2="425">
                     <stop offset="0%" stopColor={isDark ? '#818cf8' : '#4f46e5'} stopOpacity="0.8" />
                     <stop offset="100%" stopColor={isDark ? '#71717a' : '#a1a1aa'} stopOpacity="0.8" />
                   </linearGradient>
-                  <linearGradient id="edge-classic-neo" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient id="edge-classic-neo" gradientUnits="userSpaceOnUse" x1="0" y1="282" x2="0" y2="425">
                     <stop offset="0%" stopColor={isDark ? '#64748b' : '#94a3b8'} stopOpacity="0.6" />
                     <stop offset="100%" stopColor={isDark ? '#2dd4bf' : '#0d9488'} stopOpacity="0.8" />
                   </linearGradient>

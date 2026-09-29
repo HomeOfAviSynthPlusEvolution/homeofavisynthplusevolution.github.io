@@ -38,7 +38,7 @@ export default function ClassicPluginsSection({
           </p>
         </div>
 
-        {/* Plugins Grid (Direct Flat 6 Items) */}
+        {/* Plugins Grid */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {CLASSIC_PLUGINS.map((plugin) => (
             <div
@@ -84,39 +84,14 @@ export default function ClassicPluginsSection({
                 <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                   {getTranslation(plugin.shortDesc, currentLang)}
                 </p>
+                {plugin.deprecationNotice && (
+                  <p className={`mt-2 text-xs leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+                    {getTranslation(plugin.deprecationNotice, currentLang)}
+                  </p>
+                )}
 
-                {/* Specs: Bit Depth & SIMD */}
-                <div className="mt-4 pt-3 border-t border-slate-800/40 grid grid-cols-2 gap-2 text-[11px] font-mono">
-                  <div>
-                    <span className="text-slate-400 text-[10px] block font-sans">
-                      {getTranslation(t.bitDepthLabel, currentLang)}
-                    </span>
-                    <span className={`text-xs font-semibold ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
-                      {plugin.bitDepth}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-slate-400 text-[10px] block font-sans">
-                      {getTranslation(t.simdLabel, currentLang)}
-                    </span>
-                    <span className={`text-xs font-semibold ${isDark ? 'text-slate-200' : 'text-slate-800'} truncate block`}>
-                      {plugin.simd.join(', ')}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="mt-3 flex flex-wrap gap-1">
-                  {plugin.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`text-[10px] px-1.5 py-0.2 rounded ${
-                        isDark ? 'bg-slate-800/60 text-slate-400' : 'bg-slate-100 text-slate-600'
-                      }`}
-                    >
-                      #{tag}
-                    </span>
-                  ))}
+                <div className={`mt-4 text-xs font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  #{plugin.category}
                 </div>
               </div>
             </div>

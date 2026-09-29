@@ -39,13 +39,6 @@ export default function App() {
   const effectiveTheme: 'dark' | 'light' =
     themeMode === 'auto' ? (systemIsDark ? 'dark' : 'light') : themeMode;
 
-  // 3. Confidential upcoming placeholder count (4 to 6 slots, as explicitly requested)
-  const [placeholderCount, setPlaceholderCount] = useState<number>(() => {
-    const saved = localStorage.getItem('avisynth_placeholder_count');
-    const parsed = saved ? parseInt(saved, 10) : 4;
-    return parsed >= 4 && parsed <= 6 ? parsed : 4;
-  });
-
   // Listen for system theme changes
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia) return;
@@ -75,8 +68,7 @@ export default function App() {
     root.setAttribute('lang', currentLang);
     localStorage.setItem('avisynth_evolution_theme', themeMode);
     localStorage.setItem('avisynth_evolution_lang', currentLang);
-    localStorage.setItem('avisynth_placeholder_count', placeholderCount.toString());
-  }, [effectiveTheme, themeMode, currentLang, placeholderCount]);
+  }, [effectiveTheme, themeMode, currentLang]);
 
   const handleLanguageChange = (lang: Language) => {
     setCurrentLang(lang);
@@ -84,10 +76,6 @@ export default function App() {
 
   const handleThemeChange = (theme: ThemeMode) => {
     setThemeMode(theme);
-  };
-
-  const handlePlaceholderCountChange = (count: number) => {
-    setPlaceholderCount(count);
   };
 
   return (
@@ -118,8 +106,6 @@ export default function App() {
         <TopologyGraph
           currentLang={currentLang}
           effectiveTheme={effectiveTheme}
-          placeholderCount={placeholderCount}
-          onPlaceholderCountChange={handlePlaceholderCountChange}
         />
 
         {/* 3. 全新重建的内核生态 */}
@@ -128,7 +114,7 @@ export default function App() {
           effectiveTheme={effectiveTheme}
         />
 
-        {/* 4. 全新重建的插件生态 (4 个占位符) */}
+        {/* 4. 全新重建的插件生态 */}
         <NeoSeriesSection
           currentLang={currentLang}
           effectiveTheme={effectiveTheme}

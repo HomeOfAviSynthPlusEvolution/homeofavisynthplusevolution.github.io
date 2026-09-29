@@ -182,16 +182,6 @@ export const translations = {
         zh: '经典脉络',
         ja: 'クラシック系譜',
       },
-      placeholderCount: {
-        en: 'Upcoming Slots:',
-        zh: '未公开项目占位数：',
-        ja: '未公開プロジェクト枠：',
-      },
-      slotsNotice: {
-        en: 'Adjust placeholder count (4 to 6) to model stealth project capacity.',
-        zh: '调节占位符数量（4 至 6 个），动态模拟私有研发管线规模。',
-        ja: 'プレースホルダー数（4〜6枠）を変更し、秘密裏のパイプライン規模をシミュレートできます。',
-      },
     },
     inspector: {
       selectPrompt: {
@@ -274,15 +264,16 @@ export const translations = {
     },
   },
   neo: {
+    eyebrow: { en: 'Neo filter suites', zh: 'Neo 滤镜系列', ja: 'Neo フィルタシリーズ' },
     title: {
       en: 'Rebuilt Plugin Ecosystem',
       zh: '全新重建的插件生态',
       ja: '再構築されたプラグインエコシステム',
     },
     subtitle: {
-      en: 'Next-generation filter suites independently rebuilt with DualSynth2, currently in development.',
-      zh: '基于 DualSynth2 内部底座独立重建的 4 套下一代核心滤镜套件，目前仍在开发中。',
-      ja: 'DualSynth2内部基盤に基づき独立再構築された4つの次世代コアフィルタ群。現在開発中。',
+      en: 'Independently rebuilt filters for AviSynth and VapourSynth, connected through DualSynth2. Shared foundations include C++17 and Highway SIMD.',
+      zh: '面向 AviSynth 与 VapourSynth 独立重建的滤镜，通过 DualSynth2 接入双宿主，共用 C++17 与 Highway SIMD 技术基础。',
+      ja: 'AviSynth と VapourSynth 向けに独立再構築されたフィルタ群。DualSynth2 で両ホストに対応し、C++17 と Highway SIMD を共通基盤としています。',
     },
     pipelineBadge: {
       en: 'In Development',

@@ -5,20 +5,16 @@ import {
   TOPOLOGY_NODES, 
   TOPOLOGY_EDGES 
 } from '../data/ecosystemData';
-import { Network, ExternalLink } from 'lucide-react';
+import { Network } from 'lucide-react';
 
 interface TopologyGraphProps {
   currentLang: Language;
   effectiveTheme: 'dark' | 'light';
-  placeholderCount: number;
-  onPlaceholderCountChange: (count: number) => void;
 }
 
 export default function TopologyGraph({
   currentLang,
   effectiveTheme,
-  placeholderCount,
-  onPlaceholderCountChange,
 }: TopologyGraphProps) {
   const isDark = effectiveTheme === 'dark';
   const t = translations.topology;
@@ -26,13 +22,7 @@ export default function TopologyGraph({
   // Hovered node state for visual connection highlight only (no popup drawer)
   const [hoveredNodeId, setHoveredNodeId] = useState<string | null>(null);
 
-  // Filter nodes based on placeholder count and dynamically adjust upcoming slots
-  const activeNodes = useMemo(() => {
-    return TOPOLOGY_NODES.filter((node) => {
-      if (node.id === 'upcoming_slot_04' && placeholderCount < 4) return false;
-      return true;
-    });
-  }, [placeholderCount]);
+  const activeNodes = TOPOLOGY_NODES;
 
   const activeNodeIds = useMemo(() => new Set(activeNodes.map((n) => n.id)), [activeNodes]);
 

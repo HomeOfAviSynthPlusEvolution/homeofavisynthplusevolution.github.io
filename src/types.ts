@@ -34,6 +34,7 @@ export interface PluginItem {
   category: PluginCategory;
   shortDesc: LocalizedString;
   fullDesc: LocalizedString;
+  deprecationNotice?: LocalizedString;
   status: 'active' | 'upcoming' | 'classic' | 'legendary';
   isNeo?: boolean;
   isPrivate?: boolean;

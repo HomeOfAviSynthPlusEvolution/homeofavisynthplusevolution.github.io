@@ -6,116 +6,59 @@ export const CORE_ORGANIZATION = {
   officialRepo: 'https://github.com/HomeOfAviSynthPlusEvolution',
 };
 
-export const UPCOMING_NEO_PIPELINE: PluginItem[] = [
+export interface NeoProject {
+  id: string;
+  name?: string;
+  category?: PluginItem['category'];
+  repoUrl?: string;
+  shortDesc: PluginItem['shortDesc'];
+}
+
+export const NEO_PROJECTS: NeoProject[] = [
   {
-    id: 'neo_slot_01',
-    name: 'Project Slot #01',
+    id: 'neo-mv',
+    name: 'neo-mv',
     category: 'motion',
-    status: 'upcoming',
-    isNeo: true,
-    isPrivate: true,
-    pipelineQuarter: 'Pipeline Staging',
-    simd: ['In Development', 'Classified'],
-    bitDepth: 'Confidential Bit-Depth',
-    tags: ['Private Repo', 'Classified', 'DualSynth2'],
+    repoUrl: 'https://github.com/HomeOfAviSynthPlusEvolution/neo-mv',
     shortDesc: {
-      en: 'Confidential project slot currently incubating in private repository. Details will be unveiled upon public release.',
-      zh: '组织内部私有孵化中的新项目占位，目前处于深度优化与验证阶段。公开后将在此展示完整项目说明与开源仓库。',
-      ja: '組織内にて非公開開発中の機密プロジェクト枠。パブリック公開時に正式名称、詳細仕様、リポジトリが掲載されます。',
+      en: 'Rewritten from mathematical formulas and algorithms. Motion estimation and compensation, temporal denoising, frame interpolation, motion masks, and stabilization. Independently implemented with an API based on MVUtensils.',
+      zh: '从数学公式和算法出发重写的项目。提供运动估计与补偿、时域降噪、插帧、运动掩码和画面稳定，采用基于 MVUtensils 的 API 独立实现。',
+      ja: '数式とアルゴリズムから書き直したプロジェクトです。動き推定・補償、時間軸ノイズ除去、フレーム補間、動きマスク、手ぶれ補正を提供。MVUtensils の API に基づく独立実装です。',
     },
-    fullDesc: {
-      en: 'This project is currently maintained in a private repository under active development. Algorithmic architecture, benchmarks, and source code will be made public upon reaching release milestones.',
-      zh: '该项目目前在组织内部私有仓库中维护演进，正在进行多架构压力测试与性能基准验证。达到发布标准后将全量开源并转为正式公开项目。',
-      ja: '本プロジェクトは現在非公開リポジトリにて開発検証中です。品質基準・マイルストーンを達成次第、ソースコードおよび詳細仕様がパブリック公開されます。',
-    },
-    highlightSpecs: [
-      { label: { en: 'Repository', zh: '仓库状态', ja: 'リポジトリ' }, value: 'Private Staging' },
-      { label: { en: 'Disclosure', zh: '信息披露', ja: '情報開示' }, value: 'Confidential / 待公开' },
-      { label: { en: 'Integration', zh: '架构接入', ja: '対象基盤' }, value: 'DualSynth2 Runtime' },
-    ],
   },
   {
-    id: 'neo_slot_02',
-    name: 'Project Slot #02',
+    id: 'neo-fft',
+    name: 'neo-fft',
     category: 'denoise',
-    status: 'upcoming',
-    isNeo: true,
-    isPrivate: true,
-    pipelineQuarter: 'Pipeline Staging',
-    simd: ['In Development', 'Classified'],
-    bitDepth: 'Confidential Bit-Depth',
-    tags: ['Private Repo', 'Classified', 'DualSynth2'],
+    repoUrl: 'https://github.com/HomeOfAviSynthPlusEvolution/neo-fft',
     shortDesc: {
-      en: 'Confidential project slot currently incubating in private repository. Details will be unveiled upon public release.',
-      zh: '组织内部私有孵化中的新项目占位，目前处于深度优化与验证阶段。公开后将在此展示完整项目说明与开源仓库。',
-      ja: '組織内にて非公開開発中の機密プロジェクト枠。パブリック公開時に正式名称、詳細仕様、リポジトリが掲載されます。',
+      en: 'Rewritten from mathematical formulas and algorithms. FFT3D and DFTTest in one plugin: spatial and temporal denoising, Kalman filtering, sharpening, and dehalo. Includes a migration guide for legacy Neo scripts.',
+      zh: '从数学公式和算法出发重写的项目。将 FFT3D 与 DFTTest 整合为一个插件，提供空间与时域降噪、Kalman 滤波、锐化和去光晕，并提供旧版 Neo 脚本迁移指南。',
+      ja: '数式とアルゴリズムから書き直したプロジェクトです。FFT3D と DFTTest を統合し、空間・時間軸ノイズ除去、Kalman フィルタ、シャープ化、ハロー除去を提供。旧 Neo スクリプト向けの移行ガイドも用意しています。',
     },
-    fullDesc: {
-      en: 'This project is currently maintained in a private repository under active development. Algorithmic architecture, benchmarks, and source code will be made public upon reaching release milestones.',
-      zh: '该项目目前在组织内部私有仓库中维护演进，正在进行多架构压力测试与性能基准验证。达到发布标准后将全量开源并转为正式公开项目。',
-      ja: '本プロジェクトは現在非公開リポジトリにて開発検証中です。品質基準・マイルストーンを達成次第、ソースコードおよび詳細仕様がパブリック公開されます。',
-    },
-    highlightSpecs: [
-      { label: { en: 'Repository', zh: '仓库状态', ja: 'リポジトリ' }, value: 'Private Staging' },
-      { label: { en: 'Disclosure', zh: '信息披露', ja: '情報開示' }, value: 'Confidential / 待公开' },
-      { label: { en: 'Integration', zh: '架构接入', ja: '対象基盤' }, value: 'DualSynth2 Runtime' },
-    ],
   },
   {
-    id: 'neo_slot_03',
-    name: 'Project Slot #03',
-    category: 'deband',
-    status: 'upcoming',
-    isNeo: true,
-    isPrivate: true,
-    pipelineQuarter: 'Pipeline Staging',
-    simd: ['In Development', 'Classified'],
-    bitDepth: 'Confidential Bit-Depth',
-    tags: ['Private Repo', 'Classified', 'DualSynth2'],
+    id: 'neo-smo',
+    name: 'neo-smo',
+    category: 'denoise',
+    repoUrl: 'https://github.com/HomeOfAviSynthPlusEvolution/neo-smo',
     shortDesc: {
-      en: 'Confidential project slot currently incubating in private repository. Details will be unveiled upon public release.',
-      zh: '组织内部私有孵化中的新项目占位，目前处于深度优化与验证阶段。公开后将在此展示完整项目说明与开源仓库。',
-      ja: '組織内にて非公開開発中の機密プロジェクト枠。パブリック公開時に正式名称、詳細仕様、リポジトリが掲載されます。',
+      en: 'Ported from the well-known zsmooth filter suite, with Deen and MiniDeen added. Provides spatial and temporal denoising, neighborhood repair, color denoising, and block DCT filtering.',
+      zh: '移植自知名滤镜套件 zsmooth，并加入 Deen 和 MiniDeen，提供空间与时域降噪、邻域修复、色彩降噪和块 DCT 滤波。',
+      ja: '広く知られるフィルタ群 zsmooth から移植し、Deen と MiniDeen も追加。空間・時間軸ノイズ除去、近傍修復、カラーノイズ除去、ブロック DCT フィルタリングを提供します。',
     },
-    fullDesc: {
-      en: 'This project is currently maintained in a private repository under active development. Algorithmic architecture, benchmarks, and source code will be made public upon reaching release milestones.',
-      zh: '该项目目前在组织内部私有仓库中维护演进，正在进行多架构压力测试与性能基准验证。达到发布标准后将全量开源并转为正式公开项目。',
-      ja: '本プロジェクトは现在非公開リポジトリにて開発検証中です。品質基準・マイルストーンを達成次第、ソースコードおよび詳細仕様がパブリック公開されます。',
-    },
-    highlightSpecs: [
-      { label: { en: 'Repository', zh: '仓库状态', ja: 'リポジトリ' }, value: 'Private Staging' },
-      { label: { en: 'Disclosure', zh: '信息披露', ja: '情報開示' }, value: 'Confidential / 待公开' },
-      { label: { en: 'Integration', zh: '架构接入', ja: '対象基盤' }, value: 'DualSynth2 Runtime' },
-    ],
   },
-  {
-    id: 'neo_slot_04',
-    name: 'Project Slot #04',
-    category: 'mask',
-    status: 'upcoming',
-    isNeo: true,
-    isPrivate: true,
-    pipelineQuarter: 'Pipeline Staging',
-    simd: ['In Development', 'Classified'],
-    bitDepth: 'Confidential Bit-Depth',
-    tags: ['Private Repo', 'Classified', 'DualSynth2'],
+  ...['neo_slot_04', 'neo_slot_05'].map((id) => ({
+    id,
     shortDesc: {
-      en: 'Confidential project slot currently incubating in private repository. Details will be unveiled upon public release.',
-      zh: '组织内部私有孵化中的新项目占位，目前处于深度优化与验证阶段。公开后将在此展示完整项目说明与开源仓库。',
-      ja: '組織内にて非公開開発中の機密プロジェクト枠。パブリック公開時に正式名称、詳細仕様、リポジトリが掲載されます。',
+      en: 'Details will be shared when this project is made public.',
+      zh: '项目公开后将在这里展示详细介绍。',
+      ja: 'プロジェクト公開時に詳細を掲載します。',
     },
-    fullDesc: {
-      en: 'This project is currently maintained in a private repository under active development. Algorithmic architecture, benchmarks, and source code will be made public upon reaching release milestones.',
-      zh: '该项目目前在组织内部私有仓库中维护演进，正在进行多架构压力测试与性能基准验证。达到发布标准后将全量开源并转为正式公开项目。',
-      ja: '本プロジェクトは現在非公開リポジトリにて開発検証中です。品質基準・マイルストーンを達成次第、ソースコードおよび詳細仕様がパブリック公开されます。',
-    },
-    highlightSpecs: [
-      { label: { en: 'Repository', zh: '仓库状态', ja: 'リポジトリ' }, value: 'Private Staging' },
-      { label: { en: 'Disclosure', zh: '信息披露', ja: '情報开示' }, value: 'Confidential / 待公开' },
-      { label: { en: 'Integration', zh: '架构接入', ja: '対象基盤' }, value: 'DualSynth2 Runtime' },
-    ],
-  },
+  })),
 ];
+
+const neoNodeId = (project: NeoProject) => `neo_${project.id}`;
 
 export const CORE_ECOSYSTEM_MODULES: PluginItem[] = [
   {
@@ -358,6 +301,11 @@ EraseLOGO(logofile="sample.lgd")
     simd: ['AVX2', 'SSE4.1', 'FFTW3 Multi-thread'],
     bitDepth: '8 - 16 bit, 32-bit Float',
     tags: ['Denoise', 'Frequency Domain', 'FFT', '3D Temporal'],
+    deprecationNotice: {
+      en: 'Deprecated in favor of neo-fft.',
+      zh: '已弃用，建议改用 neo-fft。',
+      ja: '非推奨です。neo-fft への移行を推奨します。',
+    },
     shortDesc: {
       en: '2D/3D frequency-domain denoiser modernized from pinterf/fft3dfilter with multi-core FFTW3 and float precision.',
       zh: '基于 pinterf/fft3dfilter 深度重构的 2D/3D 频域降噪滤镜，针对现代多核 CPU、多通道浮点计算进行全面强化。',
@@ -384,6 +332,11 @@ neo_fft3d(sigma=2.5, bt=3, plane=4, ncpu=8)
     simd: ['AVX2', 'AVX-512', 'FMA3'],
     bitDepth: '8 - 16 bit, 32-bit Float',
     tags: ['Denoise', 'DFT', 'Spatial-Temporal', 'High-Precision'],
+    deprecationNotice: {
+      en: 'Deprecated in favor of neo-fft.',
+      zh: '已弃用，建议改用 neo-fft。',
+      ja: '非推奨です。neo-fft への移行を推奨します。',
+    },
     shortDesc: {
       en: '2D/3D discrete Fourier transform spatial-temporal denoiser offering surgical mathematical precision and AVX2/AVX-512 kernels.',
       zh: '基于离散傅里叶变换的 2D/3D 高保真时空降噪滤镜，具备 AVX2/AVX-512 向量化计算核与长时域滑动窗口。',
@@ -645,7 +598,7 @@ export const TOPOLOGY_NODES: TopologyNode[] = [
     status: 'active',
     repoUrl: 'https://github.com/HomeOfAviSynthPlusEvolution/dualsynth2',
     parentIds: ['core_avs_minus', 'core_avs_plus'],
-    childIds: ['upcoming_slot_01', 'upcoming_slot_02', 'upcoming_slot_03', 'upcoming_slot_04'],
+    childIds: NEO_PROJECTS.map(neoNodeId),
     description: {
       en: 'Internal C++ plugin abstraction layer enabling multi-host filter compilation (AviSynth+ & VapourSynth) for internal Neo suites.',
       zh: '内部专用 C++ 插件抽象适配层，支持内部 Neo 系列滤镜双端（AVS+ 与 VS）一次编写无缝复用。',
@@ -673,7 +626,7 @@ export const TOPOLOGY_NODES: TopologyNode[] = [
     status: 'active',
     repoUrl: 'https://github.com/HomeOfAviSynthPlusEvolution/AviSynthGarnet',
     parentIds: ['core_avs_minus', 'core_avs_plus'],
-    childIds: ['upcoming_slot_05'],
+    childIds: [],
     description: {
       en: 'Embedded mruby 4.0 scripting bridge enabling object-oriented script automation and filtergraph orchestration.',
       zh: '内嵌 mruby 4.0 的高级脚本扩展，提供面向对象的滤镜链式调用与自动化批处理编排。',
@@ -686,115 +639,24 @@ export const TOPOLOGY_NODES: TopologyNode[] = [
     },
   },
 
-  // Tier 3: 4 + 1 Placeholders
-  {
-    id: 'upcoming_slot_01',
-    label: '?',
-    shortLabel: '?',
-    subtitle: {
-      en: 'Unpublished',
-      zh: '未公开',
-      ja: '未公開',
-    },
-    group: 'upcoming',
-    x: 235,
+  // Neo nodes follow the same project list as the cards.
+  ...NEO_PROJECTS.map((project, index): TopologyNode => ({
+    id: neoNodeId(project),
+    label: project.name ?? '?',
+    subtitle: project.name
+      ? { en: project.category!, zh: project.category!, ja: project.category! }
+      : { en: 'Unpublished', zh: '未公开', ja: '未公開' },
+    group: project.repoUrl ? 'neo' : 'upcoming',
+    x: 110 + index * (700 / Math.max(1, NEO_PROJECTS.length - 1)),
     y: 425,
     radius: 32,
-    status: 'pipeline',
+    status: project.repoUrl ? 'active' : 'pipeline',
+    repoUrl: project.repoUrl,
     parentIds: ['bridge_dualsynth2'],
     childIds: [],
-    description: {
-      en: 'Component currently in development.',
-      zh: '组件目前仍在开发中。',
-      ja: '現在開発中。',
-    },
-    features: {
-      en: ['Private Staging', 'Under Active Development'],
-      zh: ['内部研发中', '发布时公开'],
-      ja: ['開発中', '公開時発表'],
-    },
-  },
-  {
-    id: 'upcoming_slot_02',
-    label: '?',
-    shortLabel: '?',
-    subtitle: {
-      en: 'Unpublished',
-      zh: '未公开',
-      ja: '未公開',
-    },
-    group: 'upcoming',
-    x: 345,
-    y: 425,
-    radius: 32,
-    status: 'pipeline',
-    parentIds: ['bridge_dualsynth2'],
-    childIds: [],
-    description: {
-      en: 'Component currently in development.',
-      zh: '组件目前仍在开发中。',
-      ja: '現在開発中。',
-    },
-    features: {
-      en: ['Private Staging', 'Under Active Development'],
-      zh: ['内部研发中', '发布时公开'],
-      ja: ['開発中', '公開時発表'],
-    },
-  },
-  {
-    id: 'upcoming_slot_03',
-    label: '?',
-    shortLabel: '?',
-    subtitle: {
-      en: 'Unpublished',
-      zh: '未公开',
-      ja: '未公開',
-    },
-    group: 'upcoming',
-    x: 455,
-    y: 425,
-    radius: 32,
-    status: 'pipeline',
-    parentIds: ['bridge_dualsynth2'],
-    childIds: [],
-    description: {
-      en: 'Component currently in development.',
-      zh: '组件目前仍在开发中。',
-      ja: '現在開発中。',
-    },
-    features: {
-      en: ['Private Staging', 'Under Active Development'],
-      zh: ['内部研发中', '发布时公开'],
-      ja: ['開発中', '公開時発表'],
-    },
-  },
-  {
-    id: 'upcoming_slot_04',
-    label: '?',
-    shortLabel: '?',
-    subtitle: {
-      en: 'Unpublished',
-      zh: '未公开',
-      ja: '未公開',
-    },
-    group: 'upcoming',
-    x: 565,
-    y: 425,
-    radius: 32,
-    status: 'pipeline',
-    parentIds: ['bridge_dualsynth2'],
-    childIds: [],
-    description: {
-      en: 'Component currently in development.',
-      zh: '组件目前仍在开发中。',
-      ja: '現在開発中。',
-    },
-    features: {
-      en: ['Private Staging', 'Under Active Development'],
-      zh: ['内部研发中', '发布时公开'],
-      ja: ['開発中', '公開時発表'],
-    },
-  },
+    description: project.shortDesc,
+    features: { en: [], zh: [], ja: [] },
+  })),
 ];
 
 export const TOPOLOGY_EDGES: TopologyEdge[] = [
@@ -811,9 +673,12 @@ export const TOPOLOGY_EDGES: TopologyEdge[] = [
   { id: 'e_minus_garnet', source: 'core_avs_minus', target: 'bridge_garnet', type: 'core-to-bridge', animated: false },
   { id: 'e_plus_garnet', source: 'core_avs_plus', target: 'bridge_garnet', type: 'core-to-bridge', animated: true },
 
-  // Layer 2 to Layer 3 (Placeholders)
-  { id: 'e_ds_slot1', source: 'bridge_dualsynth2', target: 'upcoming_slot_01', type: 'pipeline', animated: true },
-  { id: 'e_ds_slot2', source: 'bridge_dualsynth2', target: 'upcoming_slot_02', type: 'pipeline', animated: true },
-  { id: 'e_ds_slot3', source: 'bridge_dualsynth2', target: 'upcoming_slot_03', type: 'pipeline', animated: true },
-  { id: 'e_ds_slot4', source: 'bridge_dualsynth2', target: 'upcoming_slot_04', type: 'pipeline', animated: true },
+  // DualSynth2 connects to every listed Neo project.
+  ...NEO_PROJECTS.map((project): TopologyEdge => ({
+    id: `e_ds_${project.id}`,
+    source: 'bridge_dualsynth2',
+    target: neoNodeId(project),
+    type: project.repoUrl ? 'bridge-to-neo' : 'pipeline',
+    animated: true,
+  })),
 ];
